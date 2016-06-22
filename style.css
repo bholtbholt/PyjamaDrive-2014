@@ -1,0 +1,312 @@
+@charset "utf-8";
+/*
+Theme Name: The Christmas Pyjama Drive
+Theme URI:
+Author: Brian Holt
+Author URI: brianholt.ca
+Description: A custom wordpress theme for The Christmas Pyjama Drive.
+Version: 1.1
+*/
+
+/* ====================================== */
+/* Bootstrap Overrides                    */
+/* ====================================== */
+
+@media (min-width:1200px){.container{width:970px}}
+.img-rounded {border-radius: 12px}
+/* Typography */
+body{font-family: 'Merriweather Sans', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.7; color: #595847; background-color: #f2f1e0}
+h1,h2,h3,h4,h5,h6,
+.h1,.h2,.h3,.h4,.h5,.h6 {
+  font-family: inherit;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #ce2833;
+}
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, 
+h1 a:focus, h2 a:focus, h3 a:focus, h4 a:focus, h5 a:focus, h6 a:focus, 
+a.h1:hover, a.h2:hover, a.h3:hover, a.h4:hover, a.h5:hover, a.h6:hover,
+a.h1:focus, a.h2:focus, a.h3:focus, a.h4:focus, a.h5:focus, a.h6:focus {
+	text-decoration: none;
+}
+h1,.h1 {font-size: 42px}
+h2,.h2 {font-size: 36px}
+h3,.h3 {font-size: 30px}
+h4,.h4 {font-size: 24px}
+h5,.h5 {font-size: 20px}
+h6,.h6 {font-size: 16px}
+.lead {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 2;
+}
+@media (min-width: 768px) {
+  .lead {
+    font-size: 24px;
+  }
+}
+a {color: #ce2833}
+a:hover, a:focus {color:#990000}
+.text-justify:after {content: ''; width: 100%; display: inline-block}
+.container > p:first-of-type, .container > p:last-of-type {margin: 0} /* override WordPress wpautop */
+/* Forms */
+.form-control {
+	border-color: transparent;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05),0 0 8px rgba(0,0,0,.05);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.05),0 0 8px rgba(0,0,0,.05);
+}
+.form-control:focus {
+	border-color: transparent;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05),0 0 8px #217d89;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.05),0 0 8px #217d89;
+}
+textarea {resize: vertical}
+/* Buttons */
+.btn:focus, a:focus {outline: none !important}
+a.btn {white-space: nowrap}
+.btn-primary, .pager li > a {
+	border: 1px solid transparent;
+	background-color: #ce2833;
+	color: #f2f1e0;
+	border-radius: 6px;
+	padding: 6px 36px;
+	font-weight: 700;
+	-o-transition:all .2s ease-in;
+	-ms-transition:all .2s ease-in;
+	-moz-transition:all .2s ease-in;
+	-webkit-transition:all .2s ease-in;
+	transition:all .2s ease-in;
+}
+.btn-primary:hover, .btn-primary:focus, a.btn-primary:hover, a.btn-primary:focus, .btn-primary.active, .pager li > a:hover, .pager li > a:focus {background-color: #990000; border: 1px solid transparent; color: #f2f1e0; text-decoration: none}
+.btn-primary.white { background-color: #fff; color: #ce2833 }
+.btn-primary.white:hover, .btn-primary.white:focus, a.btn-primary.white:hover, a.btn-primary.white:focus { background-color: #f2f1e0; color: #ce2833 }
+
+
+
+/* ================================== */
+/* Common Elements & Typography       */
+/* ================================== */
+
+.strong, .bold {font-weight: bold}
+.em, .italic {font-style: italic}
+/* Mobile Elements */
+@media (max-width: 767px) {
+	.btn-primary {width: 100%; margin: 10px auto}
+	.break-768 {display: none}
+	.xs-text-center {text-align: center}
+}
+
+
+
+/* ================================== */
+/* Main Navigation                    */
+/* ================================== */
+
+#main-nav {
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+#main-nav a {
+	color: #ce2833;
+	-o-transition:all .2s linear;
+	-ms-transition:all .2s linear;
+	-moz-transition:all .2s linear;
+	-webkit-transition:all .2s linear;
+	transition:all .2s linear;
+}
+#main-nav a:hover, #main-nav a:focus {text-decoration: none}
+#header-menu {
+	list-style-type: none;
+	padding-left: 0;
+	text-align: center;
+}
+/* Mobile Nav */
+@media (max-width: 767px) {
+	#main-nav {background-color: #217d89}
+	#header-menu > li {
+		display: block;
+		padding: 10px;
+		width: 100%;
+	}
+	#header-menu > li > a {padding: 10px 100px; color: #f2f1e0}
+	#header-menu > li:nth-of-type(2n+2) {background-color: #004A56}
+}
+/* Responsive Nav */
+@media (min-width: 768px) {
+	#main-nav {
+		margin-bottom: -78px; /*height of main-nav */
+		position: relative;
+		z-index: 100;
+	}
+	#header-menu-div.collapse {display: block; visibility: visible}
+	#header-menu {margin-bottom: 18px}
+	#header-menu > li {
+		margin-top:27px;
+		margin-bottom: 6px;
+		display:inline-block
+	}
+	#header-menu > li > a {
+		padding:10px 20px;
+		text-shadow: 0 0 15px rgba(255,255,255,.1);
+	}
+	#header-menu > li:hover > a {
+		color: #990000;
+	}
+	/* Change colour for dark background of home page */
+	#main-nav.home a {color: #f2f1e0}
+	#main-nav.home #header-menu > li:hover > a {color: #990000}
+}
+
+
+
+/* ================================== */
+/* Footer                             */
+/* ================================== */
+
+#main-footer {
+	padding-top: 60px;
+	padding-bottom: 100px;
+	background: #217d89;
+	color: #f2f1e0;
+}
+#main-footer a {font-weight: 700; color: #f2f1e0}
+#main-footer a:hover, #main-footer a:focus {color: #fff}
+.footer-menu-div {
+	margin-bottom: 30px
+}
+.footer-menu {
+	list-style-type: none;
+	padding-left: 0;
+}
+#likebox-wrapper * {
+	width: 100% !important;
+}
+#likebox-wrapper {
+	background-color: #f2f1e0;
+	border-radius: 8px;
+	padding-top: 5px;
+}
+@media (max-width: 767px) {
+	#main-footer {text-align: center}
+	#likebox-wrapper {margin-bottom: 40px}
+}
+@media (min-width: 768px) {
+	.footer-menu-div {margin-bottom: 60px}
+}
+
+
+
+/* ================================== */
+/* Sections                           */
+/* ================================== */
+
+/*html, body {height: 100%} /* fill top with image */
+/*article:first-of-type {min-height: 100%}*/
+.page-article {
+	padding-top:40px;
+	padding-bottom:60px;
+}
+.pj-logo {width: 100%}
+@media (min-width: 768px) {
+	.page-article {
+		padding-top:60px;
+		padding-bottom:100px;
+	}
+	.page-article:first-of-type {padding-top: 100px}
+	.pj-logo {width: 600px}
+	.home-buttons a, .home-buttons button {
+		margin: 20px 20px 0;
+	}
+	#our-story:before {
+		content: '';
+		height: 400px;
+		width: 100%;
+		position: absolute;
+		background: url(images/bgs/reese.jpg) center bottom no-repeat;
+		margin-top: -460px;
+		box-shadow: 0 3px 30px rgba(0,0,0,.45);
+	}
+	#our-story {padding-top: 460px}
+}
+
+
+
+/* ================================== */
+/* Blog                               */
+/* ================================== */
+
+.blog-post {
+	margin-bottom: 80px
+}
+.byline {
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	margin: 20px 0;
+	padding: 10px 6px 0;
+}
+@media (min-width: 768px) {
+	.blog, #sidebar {padding-top: 100px; padding-bottom: 60px}
+	#sidebar {padding-left: 15px}
+	#sidebar ul {
+		list-style-type: none;
+		padding-left: 0;
+	}
+	.blog-sidebar-ul {
+		margin-bottom: 30px
+	}
+	.blog-sidebar-heading {
+		margin: 0 0 5px;
+	}
+}
+
+
+
+/* ================================== */
+/* Location Map & Contact Form        */
+/* ================================== */
+
+#locations {
+	position: relative;
+	z-index: 2;
+	box-shadow: 0 0 30px rgba(0,0,0,.3);
+}
+#locationTitle {margin-bottom: 0}
+#locationInputGroup .btn-primary {padding: 6px 16px}
+@media (max-width: 768px) {
+	#locationMap {margin-bottom: 30px}
+	#contactForm .pull-right {float: none !important}
+}
+@media (min-width: 768px) {
+	#locationInputGroup {margin-top: -54px} /* 34px input height - 20px 'bottom margin' */
+}
+input#locationInput::-webkit-input-placeholder, #contactForm input::-webkit-input-placeholder, #contactForm textarea::-webkit-input-placeholder {color:#86dada }
+input#locationInput:-moz-placeholder, #contactForm input:-moz-placeholder, #contactForm textarea:-moz-placeholder {color:#86dada; opacity:1}
+input#locationInput::-moz-placeholder, #contactForm input::-moz-placeholder, #contactForm textarea:-moz-placeholder {color:#86dada; opacity:1}
+input#locationInput:-ms-input-placeholder, #contactForm input:-ms-input-placeholder, #contactForm textarea:-moz-placeholder {color:#86dada}
+input#locationInput[type="text"], #contactForm input[type="text"], #contactForm input[type="email"], #contactForm textarea {background-color: #f2f1e0}
+#contactForm button {margin-top: 30px}
+#form-messages {color: #f2f1e0; position: absolute; font-size: 1.2em}
+
+
+
+/* ================================== */
+/* Colors                             */
+/* ================================== */
+
+/* Text */
+.cream {color: #f2f1e0}
+.pink {color: #ff9999}
+.red {color: #ce2833}
+.light-green {color: #86dada}
+.dark-green {color: #217d89}
+/* Backgrounds */
+.cream-bg {background-color: #f2f1e0 !important}
+.pink-bg {background-color: #ff9999 !important}
+.red-bg {background-color: #ce2833 !important}
+.light-green-bg {background-color: #86dada !important}
+.dark-green-bg {background-color: #217d89 !important}
+/* Text on colored backgrounds */
+.light-green-bg, .light-green-bg p, .light-green-bg a, .light-green-bg h1, .light-green-bg h2, .light-green-bg h3, .light-green-bg h4, .light-green-bg h5, .light-green-bg h6,.light-green-bg .h1, .light-green-bg .h2, .light-green-bg .h3, .light-green-bg .h4,.light-green-bg .h5, .light-green-bg .h6, .dark-green-bg, .dark-green-bg p, .dark-green-bg a, .dark-green-bg h1, .dark-green-bg h2, .dark-green-bg h3, .dark-green-bg h4, .dark-green-bg h5, .dark-green-bg h6,.dark-green-bg .h1, .dark-green-bg .h2, .dark-green-bg .h3, .dark-green-bg .h4,.dark-green-bg .h5, .dark-green-bg .h6, .pink-bg, .pink-bg p, .pink-bg a, .pink-bg h1, .pink-bg h2, .pink-bg h3, .pink-bg h4, .pink-bg h5, .pink-bg h6,.pink-bg .h1, .pink-bg .h2, .pink-bg .h3, .pink-bg .h4,.pink-bg .h5, .pink-bg .h6, .red-bg, .red-bg p, .red-bg a, .red-bg h1, .red-bg h2, .red-bg h3, .red-bg h4, .red-bg h5, .red-bg h6,.red-bg .h1, .red-bg .h2, .red-bg .h3, .red-bg .h4,.red-bg .h5, .red-bg .h6 {color: #f2f1e0}
+
+
